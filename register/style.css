@@ -1,0 +1,100 @@
+body {
+    background: #f6f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+h1 {
+    font-weight: bold;
+    margin: 0;
+}
+
+span {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+input {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 90%;
+}
+
+button {
+    border-radius: 20px;
+    border: 1px solid #121212;
+    background-color: #eee;
+    color: #121212;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.form-container {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+                0 10px 10px rgba(0,0,0,0.22);
+    text-align: center;
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 15px;
+    font-size: 12px;
+    color: blue;
+}
+
+.sign-up-link {
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.sign-up-link a {
+    color: blue; 
+    font-weight: bold;
+}
+
+.sign-up-link a:hover {
+    text-decoration: underline;
+}
+.sign-in-link {
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.sign-in-link a {
+    color: blue; /* Change the link color to red */
+    font-weight: bold;
+}
+
+.sign-in-link a:hover {
+    text-decoration: underline;
+}
+
+

@@ -1,0 +1,130 @@
+.create-post-container {
+    padding: 10px 0;
+}
+
+#createPostButton {
+    font-size: 0.8rem;
+}
+
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.feed-container {
+    margin-top: 20px;
+    padding-top: 60px;
+}
+
+.feed {
+    max-width: 800px;
+    width: 100%;
+}
+
+.post {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    border-left: 3px solid #007BFF;
+}
+
+.post:hover {
+    border-left: 3px solid #0056b3;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.post-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.post-content {
+    margin-top: 10px;
+}
+
+.post-images img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.post-footer {
+    font-size: 0.9rem;
+}
+
+.vote-icons i {
+    font-size: 20px;
+    cursor: pointer;
+    color: #007BFF;
+}
+
+.vote-icons i:hover {
+    color: #0056b3;
+}
+
+.create-post-container {
+    bottom: 10px;
+    left: 33%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+#themeToggle {
+    margin-left: auto;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar-toggler {
+    background-color: #e0e0e0; 
+    border-color: #e0e0e0;
+}
+
+body.dark-mode .post {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .post-date{
+    color: #fff;
+}
+
+body.dark-mode .nav-link {
+    color: #e0e0e0;
+}
+
+
+body.dark-mode .post-title {
+    color: #fff;
+}
+
+body.dark-mode .vote-icons i {
+    color: #e0e0e0;
+}
+
+body.dark-mode .vote-icons i:hover {
+    color: #bbb;
+}
+
+body.dark-mode .post-footer button {
+    color: #bbb;
+}
+
+body.dark-mode .post-footer button:hover {
+    color: #fff;
+}
