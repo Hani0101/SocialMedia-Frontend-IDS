@@ -41,6 +41,18 @@
                 color: black;
             }
         }
+        body.dark-mode .nav-link {
+        color: white !important;
+  }
+        body.dark-mode #sidenav{
+            background-color: #121212;
+            border-style: solid;
+            border-color: grey;
+        }
+        .nav-item{
+            display: flex;
+            justify-content: center;
+        }
     </style>
 </head>
 
@@ -57,15 +69,19 @@
 <div id="sidenav" class="d-none d-lg-block">
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link text-black active" href="#">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Profile</a>
+            <a class="nav-link text-black" href="#">Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Settings</a>
+            <a class="nav-link text-black" href="#">Settings</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-black" id="createPostButton" data-bs-toggle="modal" data-bs-target="#postModal" href="#">Create Post</a>
         </li>
     </ul>
+    </div>
 </div>
 
 <!-- Navbar for small devices -->
@@ -88,6 +104,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Settings</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black" id="createPostButton" data-bs-toggle="modal" data-bs-target="#postModal" href="#">Create Post</a>
+                </li>
             </ul>
         </div>
 
@@ -105,12 +124,6 @@
             <button id="themeToggle" class="btn btn-outline-secondary">Toggle Dark Mode</button>
         </div>
 
-        <div class="create-post-container fixed-bottom">
-            <div class="container text-left">
-                <!-- Button to trigger modal -->
-                <button id="createPostButton" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#postModal">Create Post</button>
-            </div>
-        </div>
 
         <!-- Modal for Post Creation -->
         <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">

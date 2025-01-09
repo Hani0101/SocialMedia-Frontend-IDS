@@ -2,10 +2,6 @@
     padding: 10px 0;
 }
 
-#createPostButton {
-    font-size: 0.8rem;
-}
-
 body {
     transition: background-color 0.3s, color 0.3s;
 }
