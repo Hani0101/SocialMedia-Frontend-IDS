@@ -11,103 +11,156 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
+    <style>
+        @media (min-width: 992px) {
+            #sidenav {
+                width: 250px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                padding-top: 20px;
+                z-index: 1;
+                background-color: #f8f9fa;
+                font-weight: 500;
+                color: #000;
+            }
+
+            #main-content {
+                margin-left: 250px;
+            }
+
+            #navbarContent {
+                display: block !important;
+                color: black;
+            }
+
+            .nav-item {
+                font-size: 1.5rem;
+                padding-top: 2rem;
+                color: black;
+            }
+        }
+    </style>
 </head>
 
 <body>
+<!-- Search Bar for large devices (Top right) -->
+<div class="d-none d-lg-flex justify-content-end me-3 mt-3">
+    <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+</div>
 
-    <!-- Navbar Section -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <!-- Hamburger Menu -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<!-- Sidebar for large devices -->
+<div id="sidenav" class="d-none d-lg-block">
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Settings</a>
+        </li>
+    </ul>
+</div>
 
-            <!-- Navbar Collapse (Optional for hamburger menu) -->
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Settings</a>
-                    </li>
-                </ul>
-            </div>
+<!-- Navbar for small devices -->
+<nav class="navbar navbar-expand-lg navbar-light d-lg-none">
+    <div class="container-fluid">
+        <!-- Hamburger Menu -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <!-- Search Bar (Right-Aligned) -->
-            <form class="d-flex ms-auto">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+        <!-- Navbar Collapse (Optional for hamburger menu) -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Settings</a>
+                </li>
+            </ul>
         </div>
-    </nav>
 
-    <!-- Post Feed Section -->
-    <div class="theme-toggle-container text-end p-3">
-        <button id="themeToggle" class="btn btn-outline-secondary">Toggle Dark Mode</button>
+        <!-- Search Bar (Right-Aligned) -->
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
     </div>
+</nav>
 
-    <div class="create-post-container fixed-bottom">
-        <div class="container text-left">
-            <!-- Button to trigger modal -->
-            <button id="createPostButton" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#postModal">Create Post</button>
+    <!-- Main content -->
+    <div id="main-content">
+        <div class="theme-toggle-container text-end p-3">
+            <button id="themeToggle" class="btn btn-outline-secondary">Toggle Dark Mode</button>
         </div>
-    </div>
 
-    <!-- Modal for Post Creation -->
-    <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="postModalLabel">Create a New Post</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <!-- Content Section -->
-                        <div class="mb-3">
-                            <label for="postContent" class="form-label">Content</label>
-                            <textarea class="form-control" id="postContent" rows="3" placeholder="Write your post content here"></textarea>
-                        </div>
-
-                        <!-- Categories Section -->
-                        <div class="mb-3">
-                            <label for="postCategory" class="form-label">Category</label>
-                            <select class="form-select" id="postCategory">
-                                <option selected>Select a category</option>
-                                <option value="1">Technology</option>
-                                <option value="2">React</option>
-                                <option value="3">C#</option>
-                                <option value="4">System Design</option>
-                                <option value="5">UI/UX</option>
-
-                            </select>
-                        </div>
-
-                        <!-- Tags Section -->
-                        <div class="mb-3">
-                            <label for="postTags" class="form-label">Tags</label>
-                            <input type="text" class="form-control" id="postTags" placeholder="Enter tags separated by commas">
-                        </div>
-
-                        <!-- Image Upload Section -->
-                        <div class="mb-3">
-                            <label for="postImages" class="form-label">Images</label>
-                            <input class="form-control" type="file" id="postImages" multiple>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="submitPost">Submit Post</button>
-                </div>
+        <div class="create-post-container fixed-bottom">
+            <div class="container text-left">
+                <!-- Button to trigger modal -->
+                <button id="createPostButton" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#postModal">Create Post</button>
             </div>
         </div>
-    </div>
+
+        <!-- Modal for Post Creation -->
+        <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="postModalLabel">Create a New Post</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <!-- Content Section -->
+                            <div class="mb-3">
+                                <label for="postContent" class="form-label">Content</label>
+                                <textarea class="form-control" id="postContent" rows="3" placeholder="Write your post content here"></textarea>
+                            </div>
+
+                            <!-- Categories Section -->
+                            <div class="mb-3">
+                                <label for="postCategory" class="form-label">Category</label>
+                                <select class="form-select" id="postCategory">
+                                    <option selected>Select a category</option>
+                                    <option value="1">Technology</option>
+                                    <option value="2">React</option>
+                                    <option value="3">C#</option>
+                                    <option value="4">System Design</option>
+                                    <option value="5">UI/UX</option>
+                                </select>
+                            </div>
+
+                            <!-- Tags Section -->
+                            <div class="mb-3">
+                                <label for="postTags" class="form-label">Tags</label>
+                                <input type="text" class="form-control" id="postTags" placeholder="Enter tags separated by commas">
+                            </div>
+
+                            <!-- Image Upload Section -->
+                            <div class="mb-3">
+                                <label for="postImages" class="form-label">Images</label>
+                                <input class="form-control" type="file" id="postImages" multiple>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="submitPost">Submit Post</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     <div class="feed-container d-flex justify-content-center">
         <div class="feed w-75">
             <!-- Post 1 -->
